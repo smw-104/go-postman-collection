@@ -2,6 +2,7 @@ package postman
 
 import (
 	"fmt"
+	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -51,4 +52,28 @@ func (suite *CollectionTestSuite) TestAddItemGroup() {
 		assert.Equal(suite.T(), "new-item-group", suite.Collection.Items[0].(*ItemGroup).Name)
 		assert.Equal(suite.T(), "another-new-item-group", suite.Collection.Items[1].(*ItemGroup).Name)
 	}
+}
+
+func TestParseCollection(t *testing.T) {
+
+	r := strings.NewReader(`
+	{
+		"info": {
+			"name": "Go Collection"
+		}
+	}`)
+
+	c, err := ParseCollection(r)
+
+	assert.Nil(t, err)
+	assert.Equal(t, c, &Collection{Info: Info{Name: "Go Collection"}})
+}
+
+func TestParseCollectionFail(t *testing.T) {
+	r := strings.NewReader("-invalid-json-")
+
+	c, err := ParseCollection(r)
+
+	assert.NotNil(t, err)
+	assert.Nil(t, c)
 }
