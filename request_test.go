@@ -9,7 +9,7 @@ import (
 
 func TestCreateRequest(t *testing.T) {
 	cases := []struct {
-		method          method
+		method          Method
 		url             string
 		expectedRequest *Request
 	}{

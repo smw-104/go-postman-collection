@@ -12,7 +12,7 @@ type Request struct {
 	Auth        *Auth       `json:"auth,omitempty"`
 	Proxy       interface{} `json:"proxy,omitempty"`
 	Certificate interface{} `json:"certificate,omitempty"`
-	Method      method      `json:"method"`
+	Method      Method      `json:"method"`
 	Description interface{} `json:"description,omitempty"`
 	Header      []*Header   `json:"header,omitempty"`
 	Body        *Body       `json:"body,omitempty"`
@@ -22,7 +22,7 @@ type Request struct {
 type mRequest Request
 
 // CreateRequest creates a new request.
-func CreateRequest(u string, m method) *Request {
+func CreateRequest(u string, m Method) *Request {
 	return &Request{
 		URL: &URL{
 			Raw: u,

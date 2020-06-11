@@ -1,36 +1,37 @@
 package postman
 
-type method string
+// Method HTTP Method Type
+type Method string
 
 const (
 	// Get HTTP method.
-	Get method = "GET"
+	Get Method = "GET"
 	// Put HTTP method.
-	Put method = "PUT"
+	Put = "PUT"
 	// Post HTTP method.
-	Post method = "POST"
+	Post = "POST"
 	// Patch HTTP method.
-	Patch method = "PATCH"
+	Patch = "PATCH"
 	// Delete HTTP method.
-	Delete method = "DELETE"
+	Delete = "DELETE"
 	// Copy HTTP method.
-	Copy method = "COPY"
+	Copy = "COPY"
 	// Head HTTP method.
-	Head method = "HEAD"
+	Head = "HEAD"
 	// Options HTTP method.
-	Options method = "OPTIONS"
+	Options = "OPTIONS"
 	// Link HTTP method.
-	Link method = "LINK"
+	Link = "LINK"
 	// Unlink HTTP method.
-	Unlink method = "UNLINK"
+	Unlink = "UNLINK"
 	// Purge HTTP method.
-	Purge method = "PURGE"
+	Purge = "PURGE"
 	// Lock HTTP method.
-	Lock method = "LOCK"
+	Lock = "LOCK"
 	// Unlock HTTP method.
-	Unlock method = "UNLOCK"
+	Unlock = "UNLOCK"
 	// Propfind HTTP method.
-	Propfind method = "PROPFIND"
+	Propfind = "PROPFIND"
 	// View HTTP method.
-	View method = "VIEW"
+	View = "VIEW"
 )
